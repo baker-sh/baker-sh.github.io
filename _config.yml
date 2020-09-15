@@ -4,7 +4,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Baker Blog
+title: baker.sh Blog
 email: darren@baker.sh
 author: Darren Baker
 copyright: Copyright © 2020
@@ -37,9 +37,15 @@ yat:
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
-# translate_langs:
-#   - lang: en
-#     text: English
+translate_langs:
+  - lang: en
+    img: https://www.countryflags.io/gb/flat/64.png
+    text: English
+
+  - lang: de
+    img: https://www.countryflags.io/de/flat/64.png
+    text: German
+
 #
 #   - lang: fr
 #     img: https://www.countryflags.io/fr/flat/64.png
@@ -86,10 +92,10 @@ yat:
 #   - about.md
 
 # Page default value
-# defaults:
-#   home:
-#     heading: "Your awesome heading"
-#     subheading: "Your awesome subheading"
+defaults:
+  home:
+    heading: "baker.sh"
+    subheading: "Brain 2"
 #     banner: "Your image url"
 
 # Pagination setting
