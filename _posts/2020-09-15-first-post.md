@@ -6,4 +6,4 @@ categories: junk
 tags: [junk]
 ---
 
-This is the first post
+This is the first post.
