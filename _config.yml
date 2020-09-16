@@ -9,7 +9,7 @@ email: darren@baker.sh
 author: Darren Baker
 copyright: Copyright © 2020
 description: >- # this means to ignore newlines until "baseurl:"
-  Collection of interesting snippets.
+  Random Scribblings, Ideas and Thoughts.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
@@ -37,14 +37,14 @@ yat:
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
-translate_langs:
-  - lang: en
-    img: https://www.countryflags.io/gb/flat/64.png
-    text: English
-
-  - lang: de
-    img: https://www.countryflags.io/de/flat/64.png
-    text: German
+#translate_langs:
+#  - lang: en
+#    img: https://www.countryflags.io/gb/flat/64.png
+#    text: English
+#
+#  - lang: de
+#    img: https://www.countryflags.io/de/flat/64.png
+#    text: German
 
 #
 #   - lang: fr
