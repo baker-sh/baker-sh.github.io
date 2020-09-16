@@ -37,14 +37,13 @@ yat:
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
-#translate_langs:
-#  - lang: en
-#    img: https://www.countryflags.io/gb/flat/64.png
-#    text: English
-#
-#  - lang: de
-#    img: https://www.countryflags.io/de/flat/64.png
-#    text: German
+translate_langs:
+  - lang: en
+    text: English
+
+  - lang: de
+    img: https://www.countryflags.io/de/flat/64.png
+    text: German
 
 #
 #   - lang: fr
