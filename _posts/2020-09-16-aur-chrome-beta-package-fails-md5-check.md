@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AUR Chrome Beta Package fails MD5 check
-subtitle: Here’s how to bypass it!
+subtitle: ...and how to bypass it!
 categories: scripts
 tags: [script, linux]
 ---
