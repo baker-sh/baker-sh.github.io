@@ -95,7 +95,7 @@ translate_langs:
 defaults:
   home:
     heading: "baker.sh"
-    subheading: "Second Brain"
+    subheading: "Random Scribblings, Ideas and Thoughts"
 #     banner: "Your image url"
 
 # Pagination setting
