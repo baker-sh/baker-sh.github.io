@@ -14,7 +14,7 @@ You cannot drop a database link in another user's schema, and you cannot qualify
 
 ## Problem
 
-Creating a script to automate this becomes a challenge if you have to keep jumping  in and out of other SCHEMAs to drop the DB Links. 
+Creating a script to automate this becomes a challenge if you have to keep jumping  in and out of other SCHEMAs to drop the DB Links.
 
 There must be a simpler way.
 
