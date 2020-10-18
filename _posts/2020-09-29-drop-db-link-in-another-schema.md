@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Drop DB Link in another Schema
+title: How To Drop Database Links in Another Schema
 subtitle: a workaround
 categories: scripts
 tags: [script, oracle]
 ---
 
-While scripting some jobs for our on-premise to AWS RDS migration I wanted to consolidate some old DB Links during testing but as you know you cannot delete a DB Link in another schema.
+While scripting some jobs for our on-premise to AWS RDS migration I wanted to consolidate some old Database Links during testing but as you know you cannot delete a DB Link in another schema.
 
 ## Restriction on Dropping Database Links
 
