@@ -6,7 +6,7 @@ categories: scripts
 tags: [script, oracle]
 ---
 
-While scripting some jobs for our on-premise to AWS RDS migration I wanted to consolidate some old Database Links during testing but as you know you cannot delete a DB Link in another schema.
+While scripting some jobs for our on-premise to AWS RDS migration I wanted to consolidate some old database links during testing but as you know you cannot delete a database link in another schema.
 
 ## Restriction on Dropping Database Links
 
@@ -20,7 +20,7 @@ There must be a simpler way.
 
 ## Solution
 
-You can create a procedure in the SCHEMA you want to remove the DB Link from and then execute this procedure. After the procedure has finished you can then simply drop it.
+You can create a procedure in the SCHEMA you want to remove the database link from and then execute this procedure. After the procedure has finished you can then simply drop it.
 
 Here is an example: -
 
