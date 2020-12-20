@@ -148,10 +148,10 @@ code {
 }
 
 *:not(pre) > code {
-  padding: 1px 5px;
+  padding: 3px 6px;
   border-radius: 3px;
-  color: #fff;
-  background-color: #545454;
+  background-color: #eee;
+  margin: 0 5px;
 }
 
 pre {
@@ -160,7 +160,7 @@ pre {
   background-color: #f0f0f0;
 
   // code language badge
-  &:before {
+  &::before {
     content: attr(data-lang);
     color: #fff;
     background-color: #ff4e00;
@@ -172,6 +172,11 @@ pre {
     display: inline-block;
     position: absolute;
     right: 0;
+  }
+
+  // fix wrong badge display for firefox browser
+  code > table pre::before {
+    display: none;
   }
 
   > code {
@@ -220,11 +225,13 @@ pre {
  * Tables
  */
 table {
+  display: block;
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
   color: lighten($text-color, 5%);
   border-collapse: collapse;
+  overflow: auto;
 
   tr {
     &:nth-child(even) {

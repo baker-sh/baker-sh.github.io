@@ -11,7 +11,7 @@ html {
   &[data-scroll-status='top'] {
     header.site-header-transparent {
       height: 0;
-      margin-top: 20px;
+      margin-top: 12px;
       background-color: transparent;
       transition: 0.1s height,background-color,box-shadow;
 
@@ -228,10 +228,10 @@ html {
   }
 
   .post-tags {
-    display: inline-block;
     padding-right: 150px;
 
     .post-tag {
+      display: inline-block;
       margin: 0 12px 0 0;
     }
   }
@@ -244,6 +244,7 @@ html {
   @extend %flex-1; /* <-- Keep footer on the bottom */
   -ms-flex: none; /* <-- Fix IE footer issue */
   padding: $spacing-unit * 2 0;
+  padding-top: 72px;
 }
 
 .page-heading {
@@ -326,7 +327,7 @@ html {
     }
 
     &:hover {
-      color: #777;
+      color: #787878;
     }
   }
 
@@ -357,10 +358,6 @@ html {
 
     .previous span, .next span {
       color: #b3b3b3;
-    }
-
-    a:hover {
-      color: #000;
     }
 
     .indicator {
@@ -420,7 +417,7 @@ html {
       }
     }
 
-    img, iframe {
+    img, svg, iframe {
       margin-left: auto;
       margin-right: auto;
       display: block;
@@ -500,6 +497,7 @@ html {
     @include relative-font-size(1.125);
     line-height: 15px;
     color: #666;
+    max-width: 50%;
   }
 
   .previous:before {
@@ -560,7 +558,6 @@ html {
   height: $banner-height;
   background-color: $banner-background;
   transition: height 0.2s;
-  margin-bottom: 32px;
 
   .page-banner-img {
     position: absolute;
@@ -570,6 +567,7 @@ html {
 
     & > *:first-child {
       @include center-image;
+      transition: 0.1s all ease-in-out;
     }
   }
 
@@ -590,8 +588,7 @@ html {
       > :nth-child(1) {
         @include relative-font-size(3.9);
         letter-spacing: -1px;
-        line-height: 0.95;
-        margin-bottom: 18px;
+        margin-bottom: 16px;
         font-weight: normal;
         transition: 0.2s all;
 
@@ -614,6 +611,10 @@ html {
       @include relative-font-size(1.525);
       color: #ffffffcc;
       padding-right: 280px;
+
+      @include media-query($on-palm) {
+        padding-right: 0;
+      }
     }
 
     .post-meta {
@@ -627,6 +628,10 @@ html {
     .post-tags {
       color: #999;
       padding-right: 280px;
+
+      @include media-query($on-palm) {
+        padding-right: 0;
+      }
 
       .post-tag {
         @include relative-font-size(1.125);
