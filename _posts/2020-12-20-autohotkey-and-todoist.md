@@ -57,4 +57,4 @@ else
 
 ## Usage
 
-Now everything is set up you can simply CTRL-ALT-n and a pop box will ask for your task. Enter your task information here and upon hitting return it will appear in your Todoist a few monents later.
+Now everything is set up you can simply CTRL-ALT-n and a pop box will ask for your task. Enter your task information and upon pressing ```OK``` it will appear in your Todoist a few monents later.
