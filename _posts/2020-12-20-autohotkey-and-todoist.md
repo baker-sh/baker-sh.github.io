@@ -28,8 +28,8 @@ To add a new environment variable, follow the steps listed below.
    - **System variable**: available to all users including the system programs.
 5. To create a user variable, click ```New``` under the ```User Variables``` section.
 6. To create a system variable, click ```New``` under the ```System Variables``` section.
-7. Now, type the variable name in the first field. Make sure the name has no spaces or special characters.
-8. Next, type the variable value in the second field. For example, to open a folder, you have to enter its path in the Value field.
+7. Now, type ```TTOKEN``` into the first field.
+8. Next, type your API token into the second field.
 9. Click ```Ok``` to add the environment variable.
 10. Click ```Ok``` in the environment variables window.
 11. In the main window, click ```Apply``` and ```Ok``` buttons.
