@@ -1,0 +1,1 @@
+Sitemap: blog.baker.sh/jekyll-theme-yat/sitemap.xml

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="blog.baker.sh/jekyll-theme-yat/feed.xml" rel="self" type="application/atom+xml" /><link href="blog.baker.sh/jekyll-theme-yat/" rel="alternate" type="text/html" /><updated>2021-06-16T12:31:29+00:00</updated><id>blog.baker.sh/jekyll-theme-yat/feed.xml</id><title type="html">baker.sh blog</title><subtitle>Random Scribblings, Ideas and Thoughts.</subtitle><author><name>Darren Baker</name></author><entry><title type="html">Don’t use – as a comment in SQL</title><link href="blog.baker.sh/jekyll-theme-yat/scripts/2021/06/16/dont-use-double-hyphen-for-sql-commnt.html" rel="alternate" type="text/html" title="Don’t use – as a comment in SQL" /><published>2021-06-16T00:00:00+00:00</published><updated>2021-06-16T00:00:00+00:00</updated><id>blog.baker.sh/jekyll-theme-yat/scripts/2021/06/16/dont-use-double-hyphen-for-sql-commnt</id><content type="html" xml:base="blog.baker.sh/jekyll-theme-yat/scripts/2021/06/16/dont-use-double-hyphen-for-sql-commnt.html">&lt;p&gt;Writing a quick comment in a SQL script can be achieved by a – followed by the comment. This is useful for explaining scripts as seen below.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tablename&lt;/span&gt;
+ &lt;span class=&quot;c1&quot;&gt;-- now make sure we delete the correct rows&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columnname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'delete-this-row'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;…but if any external system, a command logger for example, renders the script into one line you can end up with a problem. Although this will probably never get executed if anyone were to copy and paste this script it could end up being a bad day.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tablename&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;-- now make sure we delete the correct rows where columnname = 'TO_DELETE';&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A better way is to use /* and */ to place a comment as seen below.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tablename&lt;/span&gt;
+ &lt;span class=&quot;cm&quot;&gt;/* now make sure we delete the correct rows */&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columnname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'delete-this-row'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;…even if this is rendered into one line the comment is contained and the where clause is still functional.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tablename&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* now make sure we delete the correct rows */&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columnname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'TO_DELETE'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Although the chances of this situation happening is slim it is a possibility and rather mitigate it than hope for the best.&lt;/p&gt;</content><author><name>Darren Baker</name></author><category term="scripts" /><category term="script" /><category term="sql" /><summary type="html">Writing a quick comment in a SQL script can be achieved by a – followed by the comment. This is useful for explaining scripts as seen below.</summary></entry><entry><title type="html">AutoHotkey and Todoist</title><link href="blog.baker.sh/jekyll-theme-yat/scripts/2020/12/20/autohotkey-and-todoist.html" rel="alternate" type="text/html" title="AutoHotkey and Todoist" /><published>2020-12-20T00:00:00+00:00</published><updated>2020-12-20T00:00:00+00:00</updated><id>blog.baker.sh/jekyll-theme-yat/scripts/2020/12/20/autohotkey-and-todoist</id><content type="html" xml:base="blog.baker.sh/jekyll-theme-yat/scripts/2020/12/20/autohotkey-and-todoist.html">&lt;p&gt;A way to add a task quickly using an AutoHotkey script.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-you-will-need&quot;&gt;What you will need&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;You will need &lt;a href=&quot;https://todoist.com&quot;&gt;Todoist&lt;/a&gt; or if you want to try Todoist Premium free for 2 months then please use my referal link &lt;a href=&quot;https://todoist.com/r/darren_baker_njsbhh&quot;&gt;Todoist&lt;/a&gt;. You will need to know your API token and here is how to get yours. Launch Todoist and navigate to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Settings --&amp;gt; Integrations --&amp;gt; Scroll down to your API token&lt;/code&gt;. Note this string you will need it later.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You will need &lt;a href=&quot;https://www.autohotkey.com&quot;&gt;Autohotkey&lt;/a&gt;. Autohotkey is an automation scripting language for Windows. If you are here you probably know what this is capable of.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;environment-variable&quot;&gt;Environment Variable&lt;/h2&gt;
+
+&lt;p&gt;We are going to set up an Environment variable for your API token. The variable will be called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TTOKEN&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To add a new environment variable, follow the steps listed below.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open the Start menu by pressing the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Windows Key&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Environment variables&lt;/code&gt; and click on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Edit the system environment variables&lt;/code&gt; result.&lt;/li&gt;
+  &lt;li&gt;Click the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Environment variables&lt;/code&gt; button under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Advanced&lt;/code&gt; tab.&lt;/li&gt;
+  &lt;li&gt;You can either create a User Variable or a System Variable.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;User variable&lt;/strong&gt;: available to only that specific user.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;System variable&lt;/strong&gt;: available to all users including the system programs.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To create a user variable, click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;New&lt;/code&gt; under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;User Variables&lt;/code&gt; section.&lt;/li&gt;
+  &lt;li&gt;To create a system variable, click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;New&lt;/code&gt; under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;System Variables&lt;/code&gt; section.&lt;/li&gt;
+  &lt;li&gt;Now, type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TTOKEN&lt;/code&gt; into the first field.&lt;/li&gt;
+  &lt;li&gt;Next, type your API token into the second field.&lt;/li&gt;
+  &lt;li&gt;Click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ok&lt;/code&gt; to add the environment variable.&lt;/li&gt;
+  &lt;li&gt;Click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ok&lt;/code&gt; in the environment variables window.&lt;/li&gt;
+  &lt;li&gt;In the main window, click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Apply&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ok&lt;/code&gt; buttons.&lt;/li&gt;
+  &lt;li&gt;Restart Windows to apply the new environment variable.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;autohotkey-script&quot;&gt;AutoHotkey Script&lt;/h2&gt;
+
+&lt;p&gt;In your AutoHotkey Script add the following lines below.&lt;/p&gt;
+
+&lt;p&gt;After adding these lines you will need to reload your AutoHotkey script.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-ahk&quot;&gt;;quick add a task to todoist
+;store your API Token in an Environment Variable called TTOKEN
+;e.g. TTOKEN 0123456789abcdef0123456789abcdef01234567
+;press ctrl-alt-n combination to get a popup box
+!^n::
+EnvGet, tToken, TTOKEN
+InputBox, UserInput, Todoist Quick Add, &quot;e.g. Task1 @Label1 #Project1 +ExampleUser&quot;
+if ErrorLevel
+    MsgBox, CANCEL was pressed.
+else
+    run, curl https://api.todoist.com/sync/v8/quick/add -d token=%tToken% -d text=&quot;%UserInput%&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;Now everything is set up you can simply CTRL-ALT-n and a pop box will ask for your task. Enter your task information and upon pressing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OK&lt;/code&gt; it will appear in your Todoist a few moments later.&lt;/p&gt;</content><author><name>Darren Baker</name></author><category term="scripts" /><category term="script" /><summary type="html">A way to add a task quickly using an AutoHotkey script.</summary></entry><entry><title type="html">How To Drop Oracle Database Links in Another Schema</title><link href="blog.baker.sh/jekyll-theme-yat/scripts/2020/09/29/drop-oracle-db-link-in-another-schema.html" rel="alternate" type="text/html" title="How To Drop Oracle Database Links in Another Schema" /><published>2020-09-29T00:00:00+00:00</published><updated>2020-09-29T00:00:00+00:00</updated><id>blog.baker.sh/jekyll-theme-yat/scripts/2020/09/29/drop-oracle-db-link-in-another-schema</id><content type="html" xml:base="blog.baker.sh/jekyll-theme-yat/scripts/2020/09/29/drop-oracle-db-link-in-another-schema.html">&lt;p&gt;While scripting some jobs for our on-premise to AWS RDS migration I wanted to consolidate some old database links during testing but as you know you cannot delete a database link in another schema.&lt;/p&gt;
+
+&lt;h2 id=&quot;restriction-on-dropping-oracle-database-links&quot;&gt;Restriction on Dropping Oracle Database Links&lt;/h2&gt;
+
+&lt;p&gt;You cannot drop a database link in another user’s schema, and you cannot qualify dblink with the name of a schema, because periods are permitted in names of database links. Therefore, Oracle Database interprets the entire name, such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SCOTT.SALESDBLINK&lt;/code&gt;, as the name of a database link in your schema rather than as a database link named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SALESDBLINK&lt;/code&gt; in the schema &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SCOTT&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;Creating a script to automate this becomes a challenge if you have to keep jumping  in and out of other SCHEMAs to drop the DB Links.&lt;/p&gt;
+
+&lt;p&gt;There must be a simpler way.&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;You can create a procedure in the SCHEMA you want to remove the database link from and then execute this procedure. After the procedure has finished you can then simply drop it.&lt;/p&gt;
+
+&lt;p&gt;Here is an example: -&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;procedure&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scott&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drop_db_link&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;begin&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;execute&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;immediate&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'drop database link SALESDBLINK'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scott&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drop_db_link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;drop&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;procedure&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scott&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drop_db_link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This can be scripted quite easily and you don’t have to keep jumping in and out of different SCHEMAs to drop database links if needed.&lt;/p&gt;
+
+&lt;p&gt;Happy codin’&lt;/p&gt;</content><author><name>Darren Baker</name></author><category term="scripts" /><category term="script" /><category term="oracle" /><summary type="html">While scripting some jobs for our on-premise to AWS RDS migration I wanted to consolidate some old database links during testing but as you know you cannot delete a database link in another schema.</summary></entry><entry><title type="html">AUR Chrome Beta Package fails MD5 check</title><link href="blog.baker.sh/jekyll-theme-yat/scripts/2020/09/16/aur-chrome-beta-package-fails-md5-check.html" rel="alternate" type="text/html" title="AUR Chrome Beta Package fails MD5 check" /><published>2020-09-16T00:00:00+00:00</published><updated>2020-09-16T00:00:00+00:00</updated><id>blog.baker.sh/jekyll-theme-yat/scripts/2020/09/16/aur-chrome-beta-package-fails-md5-check</id><content type="html" xml:base="blog.baker.sh/jekyll-theme-yat/scripts/2020/09/16/aur-chrome-beta-package-fails-md5-check.html">&lt;p&gt;OK so being on the bleeding edge can sometimes have it’s downfalls and this is one of mine.&lt;/p&gt;
+
+&lt;p&gt;The AUR package downloads the latest Chrome Beta but sometimes the MD5 check in the package has not been updated BUT I still want to install it.&lt;/p&gt;
+
+&lt;p&gt;Run this to install google-chrome-beta and bypass the MD5 check: –&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yaourt &lt;span class=&quot;nt&quot;&gt;--m-arg&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;--skipchecksums&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--noconfirm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; google-chrome-beta
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now if you are here to find out how to bypass the MD5 check then I doubt if I have to tell you why this can be dangerous :).&lt;/p&gt;
+
+&lt;p&gt;Happy browsing.&lt;/p&gt;</content><author><name>Darren Baker</name></author><category term="scripts" /><category term="script" /><category term="linux" /><summary type="html">OK so being on the bleeding edge can sometimes have it’s downfalls and this is one of mine.</summary></entry><entry><title type="html">Renew Let’s Encrypt Synology – 4 Step Guide</title><link href="blog.baker.sh/jekyll-theme-yat/scripts/2020/09/15/renew-lets-encrypt-synology.html" rel="alternate" type="text/html" title="Renew Let’s Encrypt Synology – 4 Step Guide" /><published>2020-09-15T00:00:00+00:00</published><updated>2020-09-15T00:00:00+00:00</updated><id>blog.baker.sh/jekyll-theme-yat/scripts/2020/09/15/renew-lets-encrypt-synology</id><content type="html" xml:base="blog.baker.sh/jekyll-theme-yat/scripts/2020/09/15/renew-lets-encrypt-synology.html">&lt;p&gt;How to renew Let’s Encrypt certificates on a Synology NAS.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open TCP port 80 on your router and forward to your NAS.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh&lt;/code&gt; into your NAS.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo su -&lt;/code&gt; (to get root).&lt;/li&gt;
+  &lt;li&gt;run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;syno-letsencrypt renew-all -vv&lt;/code&gt; (this will renew all your certificates).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Done.&lt;/p&gt;
+
+&lt;p&gt;Now that you have your certificates renewed don’t forget to close port 80 again on your router.&lt;/p&gt;</content><author><name>Darren Baker</name></author><category term="scripts" /><category term="script" /><category term="synology nas" /><summary type="html">How to renew Let’s Encrypt certificates on a Synology NAS.</summary></entry></feed>
