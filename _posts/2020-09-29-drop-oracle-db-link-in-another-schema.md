@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How To Drop Database Links in Another Schema
+title: How To Drop Oracle Database Links in Another Schema
 subtitle: a workaround
 categories: scripts
 tags: [script, oracle]
@@ -8,7 +8,7 @@ tags: [script, oracle]
 
 While scripting some jobs for our on-premise to AWS RDS migration I wanted to consolidate some old database links during testing but as you know you cannot delete a database link in another schema.
 
-## Restriction on Dropping Database Links
+## Restriction on Dropping Oracle Database Links
 
 You cannot drop a database link in another user's schema, and you cannot qualify dblink with the name of a schema, because periods are permitted in names of database links. Therefore, Oracle Database interprets the entire name, such as ```SCOTT.SALESDBLINK```, as the name of a database link in your schema rather than as a database link named ```SALESDBLINK``` in the schema ```SCOTT```.
 
